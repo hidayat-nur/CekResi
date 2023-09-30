@@ -24,7 +24,6 @@ const CustomIcon = ({focused, label}) => {
     case 'Cek Ongkir':
       _icon = focused ? TRUCK_ICON_GREEN : TRUCK_ICON;
       break;
-
     default:
       break;
   }
