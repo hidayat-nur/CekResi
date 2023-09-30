@@ -2,10 +2,17 @@ import SEARCH_ICON from './images/search-icon.png';
 import SEARCH_ICON_GREEN from './images/search-icon-green.png';
 import TRUCK_ICON from './images/truck-icon.png';
 import TRUCK_ICON_GREEN from './images/truck-icon-green.png';
+import IC_CLOSE_ICON from './images/xmark.circle.fill.png';
 
-export {SEARCH_ICON, SEARCH_ICON_GREEN, TRUCK_ICON, TRUCK_ICON_GREEN};
+export {
+  SEARCH_ICON,
+  SEARCH_ICON_GREEN,
+  TRUCK_ICON,
+  TRUCK_ICON_GREEN,
+  IC_CLOSE_ICON,
+};
 
-export const fonts = {
+export const Fonts = {
   roboto: {
     100: 'Roboto-Thin',
     300: 'Roboto-Light',
@@ -15,4 +22,11 @@ export const fonts = {
     900: 'Roboto-Black',
     normal: 'Roboto-Regular',
   },
+};
+
+export const Colors = {
+  SystemWhite: '#FFFFFF',
+  SystemGrayLight02: '#AEAEB2',
+  SystemGrayLight06: '#F2F2F7',
+  SystemGrayDark04: '#3A3A3C',
 };

@@ -1,11 +1,25 @@
-import {View, Text} from 'react-native';
-import React from 'react';
+import {View, Text, ScrollView} from 'react-native';
+import React, {useState} from 'react';
+import {styles} from './CekResi.styles';
+import TextFieldSearch from '../../components/TextField/TextFieldSearch';
 
 const CekResi = () => {
+  const [resi, setResi] = useState<string>('');
+
+  const onChangeResi = (_text: string) => {
+    setResi(_text);
+  };
+
   return (
-    <View>
-      <Text>CekResi</Text>
-    </View>
+    <ScrollView
+      contentContainerStyle={styles.container}
+      showsVerticalScrollIndicator={false}>
+      <TextFieldSearch
+        value={resi}
+        onChangeText={onChangeResi}
+        placeholder="ketik resi disini"
+      />
+    </ScrollView>
   );
 };
 
