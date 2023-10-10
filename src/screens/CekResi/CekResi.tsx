@@ -11,32 +11,41 @@ import {
   IC_SHOPEE_EXPRESS,
 } from '../../assets';
 
-const CekResi = () => {
+interface ICekResi {
+  navigation: any;
+}
+
+const CekResi = ({navigation}: ICekResi) => {
   const [resi, setResi] = useState<string>('');
   const [cargo, setCargo] = useState<any>([
     {
       id: 1,
-      icon: IC_JNT,
+      image: IC_JNT,
+      label: 'J&T Express',
       selected: true,
     },
     {
       id: 2,
-      icon: IC_JNE,
+      image: IC_JNE,
+      label: 'JNE',
       selected: false,
     },
     {
       id: 3,
-      icon: IC_POS_INDONESIA,
+      image: IC_POS_INDONESIA,
+      label: 'Pos Indonesia',
       selected: false,
     },
     {
       id: 4,
-      icon: IC_ANTER_AJA,
+      image: IC_ANTER_AJA,
+      label: 'Anter Aja',
       selected: false,
     },
     {
       id: 5,
-      icon: IC_SHOPEE_EXPRESS,
+      image: IC_SHOPEE_EXPRESS,
+      label: 'Shopee Xpress',
       selected: false,
     },
   ]);
@@ -44,6 +53,22 @@ const CekResi = () => {
 
   const onChangeResi = (_text: string) => {
     setResi(_text);
+  };
+
+  const onCargoselect = (_id: number) => {
+    const _cargo_copy = [...cargo];
+    const _cargoManipulate = _cargo_copy.map((item: any) => ({
+      ...item,
+      selected: _id === item.id,
+    }));
+    setCargo(_cargoManipulate);
+  };
+
+  const onCargoNavigate = () => {
+    navigation.navigate('Cargo', {
+      dataCargo: cargo,
+      onSelect: onCargoselect,
+    });
   };
 
   return (
@@ -55,7 +80,7 @@ const CekResi = () => {
         onChangeText={onChangeResi}
         placeholder="ketik resi disini"
       />
-      <OptionField valueIcon={cargoSelected.icon} onPress={() => {}} />
+      <OptionField valueIcon={cargoSelected.image} onPress={onCargoNavigate} />
     </ScrollView>
   );
 };
