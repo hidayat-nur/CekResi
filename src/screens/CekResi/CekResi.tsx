@@ -1,4 +1,4 @@
-import {ScrollView} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import {styles} from './CekResi.styles';
 import TextFieldSearch from '../../components/TextField/TextFieldSearch';
@@ -10,6 +10,7 @@ import {
   IC_POS_INDONESIA,
   IC_SHOPEE_EXPRESS,
 } from '../../assets';
+import AutoCard from './_components/AutoCard';
 
 interface ICekResi {
   navigation: any;
@@ -75,12 +76,27 @@ const CekResi = ({navigation}: ICekResi) => {
     <ScrollView
       contentContainerStyle={styles.container}
       showsVerticalScrollIndicator={false}>
-      <TextFieldSearch
-        value={resi}
-        onChangeText={onChangeResi}
-        placeholder="ketik resi disini"
-      />
-      <OptionField valueIcon={cargoSelected.image} onPress={onCargoNavigate} />
+      <View style={styles.content}>
+        <TextFieldSearch
+          value={resi}
+          onChangeText={onChangeResi}
+          placeholder="ketik resi disini"
+        />
+        <OptionField
+          valueIcon={cargoSelected.image}
+          onPress={onCargoNavigate}
+        />
+        {false && (
+          <View style={styles.auto}>
+            <Text style={styles.autoTitle}>Pencarian tersimpan</Text>
+            <View style={styles.autoList}>
+              <AutoCard label="26271hjjhdsd7283" onPress={() => {}} />
+              <AutoCard label="JP2872937293729" onPress={() => {}} />
+              <AutoCard label="2382938293829382IS" onPress={() => {}} />
+            </View>
+          </View>
+        )}
+      </View>
     </ScrollView>
   );
 };

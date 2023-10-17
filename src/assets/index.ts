@@ -10,6 +10,7 @@ import IC_POS_INDONESIA from './images/POSIndonesia.png';
 import IC_SHOPEE_EXPRESS from './images/Shopeexpress.png';
 import IC_ANTER_AJA from './images/AnterAja.png';
 import IC_CHECKMARK from './images/checkmark.png';
+import IC_TRASH from './images/ph_trash.png';
 
 export {
   SEARCH_ICON,
@@ -24,6 +25,7 @@ export {
   IC_SHOPEE_EXPRESS,
   IC_ANTER_AJA,
   IC_CHECKMARK,
+  IC_TRASH,
 };
 
 export const Fonts = {

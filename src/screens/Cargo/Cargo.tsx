@@ -19,7 +19,7 @@ const Cargo = ({route, navigation}: ICargo) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        {dataCargo.map(({image, label, id, selected}) => (
+        {dataCargo.map(({image, label, id, selected}: any) => (
           <TouchableOpacity
             activeOpacity={0.75}
             onPress={() => onPress(id)}
